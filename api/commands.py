@@ -15,7 +15,7 @@ from libs.rsa import generate_key_pair
 from models.account import Tenant
 from models.dataset import Dataset, DatasetCollectionBinding, DocumentSegment
 from models.dataset import Document as DatasetDocument
-from models.model import Account, App, AppMode, AppModelConfig, Conversation
+from models.model import Account, App, AppMode, Conversation
 from models.provider import Provider, ProviderModel
 
 
