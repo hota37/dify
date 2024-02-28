@@ -32,7 +32,6 @@ const Apps: FC = () => {
   })
   const {
     data: { categories, allList },
-    isLoading,
   } = useSWR(
     ['/explore/apps'],
     () =>
@@ -90,7 +89,7 @@ const Apps: FC = () => {
     }
   }
 
-  if (!isLoading) {
+  if (!categories) {
     return (
       <div className="flex h-full items-center">
         <Loading type="area" />
