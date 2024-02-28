@@ -7,6 +7,7 @@ from models.account import Tenant, TenantAccountJoin, TenantAccountJoinRole
 from services.account_service import TenantService
 from services.feature_service import FeatureService
 
+
 class WorkspaceService:
     @classmethod
     def get_tenant_info(cls, tenant: Tenant):
