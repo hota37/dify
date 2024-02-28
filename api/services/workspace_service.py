@@ -7,7 +7,6 @@ from models.account import Tenant, TenantAccountJoin, TenantAccountJoinRole
 from services.account_service import TenantService
 from services.feature_service import FeatureService
 
-
 class WorkspaceService:
     @classmethod
     def get_tenant_info(cls, tenant: Tenant):
@@ -38,13 +37,10 @@ class WorkspaceService:
             base_url = current_app.config.get('FILES_URL')
             replace_webapp_logo = f'{base_url}/files/workspaces/{tenant.id}/webapp-logo' if tenant.custom_config_dict.get('replace_webapp_logo') else None
             remove_webapp_brand = tenant.custom_config_dict.get('remove_webapp_brand', False)
-            # Make sure the custom_config_dict is updated with the new values
-            brand = {
-                'base_url': base_url,
+
+            tenant_info['custom_config'] = {
                 'remove_webapp_brand': remove_webapp_brand,
                 'replace_webapp_logo': replace_webapp_logo,
             }
-
-            tenant_info['custom_config'] = tenant.custom_config_dict.update(brand)
 
         return tenant_info
