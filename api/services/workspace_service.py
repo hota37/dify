@@ -45,6 +45,6 @@ class WorkspaceService:
                 'replace_webapp_logo': replace_webapp_logo,
             }
 
-            tenant_info['custom_config'].update(brand)
+            tenant_info['custom_config'] = tenant.custom_config_dict.update(brand)
 
         return tenant_info
