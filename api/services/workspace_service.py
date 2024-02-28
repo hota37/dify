@@ -40,6 +40,7 @@ class WorkspaceService:
             remove_webapp_brand = tenant.custom_config_dict.get('remove_webapp_brand', False)
             # Make sure the custom_config_dict is updated with the new values
             tenant.custom_config_dict.update({
+                'base_url': base_url,
                 'remove_webapp_brand': remove_webapp_brand,
                 'replace_webapp_logo': replace_webapp_logo,
             })
