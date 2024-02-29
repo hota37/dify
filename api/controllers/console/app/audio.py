@@ -43,7 +43,7 @@ class ChatMessageAudioApi(Resource):
 
         try:
             response = AudioService.transcript_asr(
-                tenant_id=app_model.tenant_id,
+                app_model=app_model,
                 file=file,
                 end_user=None,
             )
@@ -83,9 +83,8 @@ class ChatMessageTextApi(Resource):
     def post(self, app_model):
         try:
             response = AudioService.transcript_tts(
-                tenant_id=app_model.tenant_id,
+                app_model=app_model,
                 text=request.form['text'],
-                voice=app_model.app_model_config.text_to_speech_dict.get('voice'),
                 streaming=False
             )
 
