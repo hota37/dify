@@ -107,8 +107,8 @@ class FunctionCallAgentRunner(BaseAgentRunner):
                 messages_ids=message_file_ids
             )
 
-            # recale llm max tokens
-            self.recale_llm_max_tokens(self.model_config, prompt_messages)
+            # recalc llm max tokens
+            self.recalc_llm_max_tokens(self.model_config, prompt_messages)
             # invoke model
             chunks: Union[Generator[LLMResultChunk, None, None], LLMResult] = model_instance.invoke_llm(
                 prompt_messages=prompt_messages,
